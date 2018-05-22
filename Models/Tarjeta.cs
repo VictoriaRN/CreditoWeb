@@ -70,7 +70,12 @@ namespace CreditoWeb.Models
             if(TarjetaNum.Substring(0,2)=="34"||TarjetaNum.Substring(0,2)=="37"){
                 return TipoTarjeta.AMERICANEXPRESS;
             }
-           
+           if(TarjetaNum.Substring(0,2)=="65"){
+                return TipoTarjeta.DISCOVERCARD;
+            }
+            if(TarjetaNum.Substring(0,2)=="300"||TarjetaNum.Substring(0,2)=="305"){
+                return TipoTarjeta.DINERSCLUBCARTEBLANCHE;
+            }
             return TipoTarjeta.NOVALIDA;
 
         }
@@ -83,6 +88,8 @@ namespace CreditoWeb.Models
         VISA,
         MASTERCARD,
         AMERICANEXPRESS,
+        DISCOVERCARD,
+        DINERSCLUBCARTEBLANCHE,
         NOVALIDA
 
     }
